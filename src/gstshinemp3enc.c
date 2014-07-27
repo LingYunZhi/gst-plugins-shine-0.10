@@ -369,7 +369,7 @@ gst_shinemp3enc_handle_frame (GstAudioEncoder * enc, GstBuffer * in_buf)
     unsigned char *mp3_buf;
     long mp3_size;
 
-    mp3_buf = shine_encode_buffer_interlaced(shine->shine, data, &mp3_size);
+    mp3_buf = shine_encode_buffer_interleaved(shine->shine, data, &mp3_size);
     if (G_LIKELY (mp3_size > 0)) {
       /* allocate output buffer */
       GstBuffer *out_buf = gst_buffer_new_and_alloc (mp3_size);
